@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/img2.jpg);
+    width: 960px;
+    margin: 0 auto;
+}
+
+.clearfix {
+    content: " ";
+    display: block;
+    clear: both;
+    overflow: auto;
+}
+
+h1 {
+    background-color: palevioletred;
+    color: white;
+    margin: 0%;
+    text-align: center;
+}
+
+.container{
+    color:palevioletred;
+    border: 3px solid black;
+    background-color: aliceblue;
+
+}
+
+h3{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    
+}

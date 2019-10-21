@@ -1,11 +1,4 @@
-window.onload = function() {
-  $("#start").click(start);
- 
-};
-//click to start the timer
-
-
-(function() {
+(function () {
   function quiz() {
 
     // HTML output
@@ -54,7 +47,7 @@ window.onload = function() {
         numCorrect++;
         // correct score logging
         answerContainers[questionNumber].style.color = "lightgreen";
-        console.log('correct'); 
+        console.log('correct');
       } else {
         // if answer wrong/empt make color red
         answerContainers[questionNumber].style.color = "red";
@@ -69,13 +62,30 @@ window.onload = function() {
   const quizContainer = document.getElementById("quiz");
   const resultsContainer = document.getElementById("results");
   const submitButton = document.getElementById("submit");
-  const myQuestions = [
-    {
+  const myQuestions = [{
       question: 'Rah, rah, ah, ah, ah, roma, roma, ma. Gaga, ooh, la, la... want your bad romance!',
       answers: {
         a: 'Lily Allen',
         b: 'Beatles',
         c: 'Lady Gaga'
+      },
+      correctAnswer: 'c'
+    },
+    {
+      question: "I don't think they're ready for that jelly",
+      answers: {
+        a: "Destny's Child",
+        b: 'Beatles',
+        c: 'Beyonce'
+      },
+      correctAnswer: 'a'
+    },
+    {
+      question: 'Put your makeup on fix your hair up pretty and Meet me tonight in Atlantic City',
+      answers: {
+        a: 'Elton John',
+        b: 'Beatles',
+        c: 'Bruce Springstein'
       },
       correctAnswer: 'c'
     },
@@ -88,7 +98,7 @@ window.onload = function() {
       },
       correctAnswer: 'a'
     },
-            //needed to use "" because the sentence had a few ' in it
+    //needed to use "" because the sentence had a few ' in it
     {
       question: "I can't wait 'til I get you on the floor good-looking",
       answers: {
@@ -104,25 +114,25 @@ window.onload = function() {
 
   // on submit, show results
   submitButton.addEventListener("click", results);
-  
+
 })();
-function start() 
+window.onload = function start()
 
 
 {
 
-  let counter = 5;
-  let interval = setInterval(function() {
-      counter--;
-      if (counter <= 0) {
-           clearInterval(interval);
-          $('#timer').html("<h3>Times Up! Lets see your results...</h3> ");  
-          $("#quiz").toggle();
+  let counter = 45;
+  let interval = setInterval(function () {
+    counter--;
+    if (counter <= 0) {
+      clearInterval(interval);
+      $('#timer').html("<h3>Times Up! Submit what you got & lets see your results...</h3> ");
+      $("#quiz").toggle();
 
-          return;
-      }else{
-        $('#time').text(counter);
-        console.log("Timer --> " + counter);
-      }
+      return;
+    } else {
+      $('#time').text(counter + '');
+      console.log("Timer --> " + counter);
+    }
   }, 1000);
 }
